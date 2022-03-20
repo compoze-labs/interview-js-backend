@@ -10,7 +10,7 @@ describe("the backend", () => {
             .set("Content-Type", "application/json")
             .send(JSON.stringify({
                 name: "Bilbo Baggins",
-                comments: "Was a hobbit from the Shire."
+                comments: "Was a hobbit from the Shire.",
             }))
 
         expect(res.status).toBe(201)
@@ -22,7 +22,7 @@ describe("the backend", () => {
             .set("Content-Type", "application/json")
             .send(JSON.stringify({
                 name: "",
-                comments: "Was a hobbit from the Shire."
+                comments: "Was a hobbit from the Shire.",
             }))
 
         expect(res.status).toBe(400)
@@ -33,7 +33,7 @@ describe("the backend", () => {
             .post("/feedback")
             .set("Content-Type", "application/json")
             .send(JSON.stringify({
-                comments: "Was a hobbit from the Shire."
+                comments: "Was a hobbit from the Shire.",
             }))
 
         expect(res.status).toBe(400)
@@ -45,7 +45,7 @@ describe("the backend", () => {
             .set("Content-Type", "application/json")
             .send(JSON.stringify({
                 name: "Bilbo Baggins",
-                comments: ""
+                comments: "",
             }))
 
         expect(res.status).toBe(400)
@@ -56,7 +56,7 @@ describe("the backend", () => {
             .post("/feedback")
             .set("Content-Type", "application/json")
             .send(JSON.stringify({
-                name: "Bilbo Baggins"
+                name: "Bilbo Baggins",
             }))
 
         expect(res.status).toBe(400)
