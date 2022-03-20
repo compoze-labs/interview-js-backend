@@ -13,10 +13,17 @@ The purpose of this interview is to get an idea of how you would approach proble
 This repository is intended as an MVP for a product for providing feedback for a US-based company. The current MVP allows us to input feedback into the custom feedback form and integrate that into several downstream services that the company uses for tracking customer sentiment. 
 
 # Development
+This repository starts up the backend of the 'full stack application'. It is a simple ExpressJS backend that runs on port 8080 and serves the endpoint `POST /feedback`, which currently accepts a JSON body with two strings: `name` and `comments`. If either of these are missing, it throws a 400 response, as we cannot use feedback from people without context.
 
 ### Startup
 ```bash
 $ npm start
+```
+> To test whether it is working, you can run `curl -v -X POST -H 'Content-Type: application/json' -d '{"name": "test", "comments": "test"}' localhost:8080/feedback` and you should see a 201 response (or you can use Postman)
+
+### Testing
+```bash
+$ npm test
 ```
 
 ### Linting
