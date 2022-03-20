@@ -17,6 +17,7 @@ This repository starts up the backend of the 'full stack application'. It is a s
 
 ### Startup
 ```bash
+$ npm install
 $ npm start
 ```
 > To test whether it is working, you can run `curl -v -X POST -H 'Content-Type: application/json' -d '{"name": "test", "comments": "test"}' localhost:8080/feedback` and you should see a 201 response (or you can use Postman)
